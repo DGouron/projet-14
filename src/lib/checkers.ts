@@ -1,4 +1,4 @@
-import { EmployeeType } from "@/components/providers";
+import type { EmployeeType } from "@/components/providers";
 
 export function checkFormValidity(employeeToCreate: EmployeeType | null) {
 	if (employeeToCreate === null) return false;

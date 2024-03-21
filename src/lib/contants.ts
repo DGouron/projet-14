@@ -1,16 +1,15 @@
-import { EmployeeType } from "@/components/providers";
+import type { EmployeeType } from "@/components/providers";
 
-type DepartmentType = {
+export type DepartmentType = {
 	value: string;
 	label: string;
 };
 
 export const DEFAULT_EMPLOYEE: EmployeeType = {
-	id: "",
 	firstName: "",
 	lastName: "",
-	dateOfBirth: new Date(),
-	startDate: new Date(),
+	dateOfBirth: new Date().toISOString(),
+	startDate: new Date().toISOString(),
 	street: "",
 	city: "",
 	state: "Alabama",

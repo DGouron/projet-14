@@ -2,14 +2,14 @@
 
 import { useAppContext } from "../providers"
 import { DataTable } from "../ui/data-table"
-import { EmployeesColumns } from "./employeeColumns";
+import { EmployeesColumns } from "./EmployeeColumns";
 
 
 export function EmployeeDataTable() {
   const appContext = useAppContext();
   return (
-    <div>
+    <section className="mt-4 w-full ">
       <DataTable columns={EmployeesColumns} data={appContext.employeeList} />
-    </div>
+    </section>
   )
 }

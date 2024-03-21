@@ -2,11 +2,10 @@ import { DEFAULT_EMPLOYEE } from "@/lib/contants";
 import { createContext, useContext, useState } from "react";
 
 export type EmployeeType = {
-  id: string,
   firstName: string,
   lastName: string,
-  dateOfBirth: Date,
-  startDate: Date,
+  dateOfBirth: string,
+  startDate: string,
   street: string,
   city: string,
   state: string,
