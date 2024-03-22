@@ -1,5 +1,8 @@
 import { DEFAULT_EMPLOYEE } from "@/lib/contants";
+import { generateRandomEmployee } from "@/lib/mock";
 import { createContext, useContext, useState } from "react";
+
+const MOCKED_EMPLOYEE_LIST = Array.from({ length: 1211 }, () => generateRandomEmployee());
 
 export type EmployeeType = {
   firstName: string,
@@ -25,7 +28,7 @@ type AppContextType = {
 const AppContext = createContext<AppContextType>({
   employeeToCreate: DEFAULT_EMPLOYEE,
   setEmployeeToCreate: () => { },
-  employeeList: [],
+  employeeList: MOCKED_EMPLOYEE_LIST,
   setEmployeeList: () => { },
   currentPage: "createEmployee",
   setCurrentPage: () => { },
@@ -33,7 +36,7 @@ const AppContext = createContext<AppContextType>({
 
 export function AppWrapper({ children }: { children: React.ReactNode }) {
   const [employeeToCreate, setEmployeeToCreate] = useState<EmployeeType | null>(DEFAULT_EMPLOYEE);
-  const [employeeList, setEmployeeList] = useState<EmployeeType[]>([]);
+  const [employeeList, setEmployeeList] = useState<EmployeeType[]>(MOCKED_EMPLOYEE_LIST);
   const [currentPage, setCurrentPage] = useState<string>("createEmployee");
 
   return (
