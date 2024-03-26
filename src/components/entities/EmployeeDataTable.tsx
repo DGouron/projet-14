@@ -1,8 +1,8 @@
 "use client"
 
+import { EmployeesColumns } from "../entities/EmployeeColumns.tsx";
 import { useAppContext } from "../providers"
 import { DataTable } from "../ui/data-table"
-import { EmployeesColumns } from "./EmployeeColumns";
 
 
 export function EmployeeDataTable() {
